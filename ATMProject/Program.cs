@@ -24,7 +24,7 @@ void withdrawal(CardHolder currentUser)
     //check if the user has enough money
     if (currentUser.getBalance() > Withdrawal)
     {
-        Console.WriteLine("Insufficient balance: (");
+        Console.WriteLine("Insufficient balance: ");
     }
     else
     {
@@ -39,11 +39,11 @@ void balance(CardHolder currentUser)
 }
 
 List<CardHolder> CardHolders = new List<CardHolder>();
-CardHolders.Add(new CardHolder("4563783644936373", 1234, "John", "Griffith", 9070.31));
-CardHolders.Add(new CardHolder("4563783574436373", 4334, "Ashley", "Bald", 9050.31));
-CardHolders.Add(new CardHolder("4563783644178373", 1084, "Fred", "Saint", 5650.31));
-CardHolders.Add(new CardHolder("4534583644936373", 1230, "Vic", "Gold", 9870.31));
-CardHolders.Add(new CardHolder("4563783644936309", 1239, "Bola", "Greg", 1090.31));
+CardHolders.Add(new CardHolder("4563783644936373", 1234, " John ", "Griffith", 9070.31));
+CardHolders.Add(new CardHolder("4563783574436373", 4334, " Ashley ", "Bald", 9050.31));
+CardHolders.Add(new CardHolder("4563783644178373", 1084, " Fred ", "Saint", 5650.31));
+CardHolders.Add(new CardHolder("4534583644936373", 1230, " Vic ", "Gold", 9870.31));
+CardHolders.Add(new CardHolder("4563783644936309", 1239, " Bola ", "Greg", 1090.31));
 
 //Prompt User
 Console.WriteLine("Welcome to my ATM Gallery");
@@ -64,7 +64,7 @@ while (true)
     catch { Console.WriteLine("Incorrect pin. Please try again "); }
 }
 
-Console.WriteLine("Welcome" + currentUser.getfirstName() + " : )");
+Console.WriteLine("Welcome, Please Insert Your Pin Here" + currentUser.getfirstName() + " :"); //I included Insert Pin Here
 int option = 0;
 while (true)
 {
@@ -77,7 +77,7 @@ while (true)
     catch { Console.WriteLine("Incorrect Pin. Please try again"); }
 }
 
-Console.WriteLine("Welcome " + currentUser.getfirstName() + " : )");
+Console.WriteLine("Welcome, " + currentUser.getfirstName() + " : )");
 int Option = 0;
 do
 {
@@ -90,7 +90,7 @@ do
     catch { }
     if (option == 1) { deposit(currentUser); }
     else if (option == 2) { withdrawal(currentUser); }
-    else if (option == 3) { deposit(currentUser); }
+    else if (option == 3) { balance(currentUser); }  //I changed deposit to balance to resolve it.
     else if (option == 4) { break; }
     else { option = 0; }
 }
